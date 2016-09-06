@@ -162,66 +162,78 @@
             this.card2.BackgroundImage = global::Memory.Properties.Resources.Kartenrücken___Kopie;
             this.card2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.card2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card2.InitialImage = global::Memory.Properties.Resources.Kartenrücken___Kopie;
             this.card2.Location = new System.Drawing.Point(210, 27);
             this.card2.Name = "card2";
             this.card2.Size = new System.Drawing.Size(120, 180);
             this.card2.TabIndex = 9;
             this.card2.TabStop = false;
+            this.card2.WaitOnLoad = true;
             // 
             // card3
             // 
             this.card3.BackgroundImage = global::Memory.Properties.Resources.Kartenrücken___Kopie;
             this.card3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.card3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card3.InitialImage = global::Memory.Properties.Resources.Kartenrücken___Kopie;
             this.card3.Location = new System.Drawing.Point(391, 27);
             this.card3.Name = "card3";
             this.card3.Size = new System.Drawing.Size(120, 180);
             this.card3.TabIndex = 10;
             this.card3.TabStop = false;
+            this.card3.WaitOnLoad = true;
             // 
             // card4
             // 
             this.card4.BackgroundImage = global::Memory.Properties.Resources.Kartenrücken___Kopie;
             this.card4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.card4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card4.InitialImage = global::Memory.Properties.Resources.Kartenrücken___Kopie;
             this.card4.Location = new System.Drawing.Point(561, 27);
             this.card4.Name = "card4";
             this.card4.Size = new System.Drawing.Size(120, 180);
             this.card4.TabIndex = 11;
             this.card4.TabStop = false;
+            this.card4.WaitOnLoad = true;
             // 
             // card5
             // 
             this.card5.BackgroundImage = global::Memory.Properties.Resources.Kartenrücken___Kopie;
             this.card5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.card5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card5.InitialImage = global::Memory.Properties.Resources.Kartenrücken___Kopie;
             this.card5.Location = new System.Drawing.Point(731, 27);
             this.card5.Name = "card5";
             this.card5.Size = new System.Drawing.Size(120, 180);
             this.card5.TabIndex = 12;
             this.card5.TabStop = false;
+            this.card5.WaitOnLoad = true;
             // 
             // card10
             // 
             this.card10.BackgroundImage = global::Memory.Properties.Resources.Kartenrücken___Kopie;
             this.card10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.card10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card10.InitialImage = global::Memory.Properties.Resources.Kartenrücken___Kopie;
             this.card10.Location = new System.Drawing.Point(731, 292);
             this.card10.Name = "card10";
             this.card10.Size = new System.Drawing.Size(120, 180);
             this.card10.TabIndex = 17;
             this.card10.TabStop = false;
+            this.card10.WaitOnLoad = true;
             // 
             // card9
             // 
             this.card9.BackgroundImage = global::Memory.Properties.Resources.Kartenrücken___Kopie;
             this.card9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.card9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card9.InitialImage = global::Memory.Properties.Resources.Kartenrücken___Kopie;
             this.card9.Location = new System.Drawing.Point(561, 292);
             this.card9.Name = "card9";
             this.card9.Size = new System.Drawing.Size(120, 180);
             this.card9.TabIndex = 16;
             this.card9.TabStop = false;
+            this.card9.WaitOnLoad = true;
             // 
             // card8
             // 
@@ -229,34 +241,39 @@
             this.card8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.card8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.card8.ImageLocation = "";
-            this.card8.InitialImage = null;
+            this.card8.InitialImage = global::Memory.Properties.Resources.Kartenrücken___Kopie;
             this.card8.Location = new System.Drawing.Point(391, 290);
             this.card8.Name = "card8";
             this.card8.Size = new System.Drawing.Size(120, 180);
             this.card8.TabIndex = 15;
             this.card8.TabStop = false;
+            this.card8.WaitOnLoad = true;
             // 
             // card7
             // 
             this.card7.BackgroundImage = global::Memory.Properties.Resources.Kartenrücken___Kopie;
             this.card7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.card7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card7.InitialImage = global::Memory.Properties.Resources.Kartenrücken___Kopie;
             this.card7.Location = new System.Drawing.Point(210, 290);
             this.card7.Name = "card7";
             this.card7.Size = new System.Drawing.Size(120, 180);
             this.card7.TabIndex = 14;
             this.card7.TabStop = false;
+            this.card7.WaitOnLoad = true;
             // 
             // card6
             // 
             this.card6.BackgroundImage = global::Memory.Properties.Resources.Kartenrücken___Kopie;
             this.card6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.card6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card6.InitialImage = global::Memory.Properties.Resources.Kartenrücken___Kopie;
             this.card6.Location = new System.Drawing.Point(31, 292);
             this.card6.Name = "card6";
             this.card6.Size = new System.Drawing.Size(120, 180);
             this.card6.TabIndex = 13;
             this.card6.TabStop = false;
+            this.card6.WaitOnLoad = true;
             // 
             // Form
             // 

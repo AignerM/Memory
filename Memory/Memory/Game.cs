@@ -44,15 +44,19 @@ namespace Memory
         public void InitCrads()
         {
             int idc = 10;
-
+            int y = 0;
             for(int i = 0; i < 10; i++)
             {
                 if (i % 2 == 0)
                 {
-                    for (int y = 0; y < 5; y++)
+                    for (y = 0; y < 5; y++)
                     {
                         path = paths[y];
                     }
+                }
+                else
+                {
+                    path = paths[y];
                 }
                 if ((i % 2) == 0)
                 {

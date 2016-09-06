@@ -9,7 +9,6 @@ namespace Memory
 {
     public class Card
     {
-        private Form location;
         private int id;
         private string path;
 
@@ -36,14 +35,5 @@ namespace Memory
             id = 0;
             path = string.Empty;
         }
-        public string ImageLocation { get; set; }
-        
-        
-        public Form BackImage
-        {
-            get { return location; }
-            set { location = value; }
-        } 
-        
     }
 }
