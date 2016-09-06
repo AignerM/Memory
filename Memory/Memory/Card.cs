@@ -29,11 +29,5 @@ namespace Memory
             get { return path; }
             set { path = value; }
         }
-
-        public Card()
-        {
-            id = 0;
-            path = string.Empty;
-        }
     }
 }

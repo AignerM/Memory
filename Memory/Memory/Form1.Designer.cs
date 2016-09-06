@@ -90,7 +90,6 @@
             this.label2.Size = new System.Drawing.Size(97, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "Versuche:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // trycounter
             // 
@@ -113,6 +112,7 @@
             this.start.TabIndex = 4;
             this.start.Text = "Spiel Starten";
             this.start.UseVisualStyleBackColor = true;
+            this.start.Click += new System.EventHandler(this.start_Click);
             // 
             // stopp
             // 
@@ -123,6 +123,7 @@
             this.stopp.TabIndex = 5;
             this.stopp.Text = "Spiel Stoppen";
             this.stopp.UseVisualStyleBackColor = true;
+            this.stopp.Click += new System.EventHandler(this.stopp_Click);
             // 
             // highscores
             // 
@@ -143,6 +144,7 @@
             this.end.TabIndex = 7;
             this.end.Text = "Beenden";
             this.end.UseVisualStyleBackColor = true;
+            this.end.Click += new System.EventHandler(this.end_Click);
             // 
             // card1
             // 
@@ -156,6 +158,7 @@
             this.card1.TabIndex = 8;
             this.card1.TabStop = false;
             this.card1.WaitOnLoad = true;
+            this.card1.Click += new System.EventHandler(this.card1_Click);
             // 
             // card2
             // 
@@ -169,6 +172,7 @@
             this.card2.TabIndex = 9;
             this.card2.TabStop = false;
             this.card2.WaitOnLoad = true;
+            this.card2.Click += new System.EventHandler(this.card2_Click);
             // 
             // card3
             // 
@@ -182,6 +186,7 @@
             this.card3.TabIndex = 10;
             this.card3.TabStop = false;
             this.card3.WaitOnLoad = true;
+            this.card3.Click += new System.EventHandler(this.card3_Click);
             // 
             // card4
             // 
@@ -195,6 +200,7 @@
             this.card4.TabIndex = 11;
             this.card4.TabStop = false;
             this.card4.WaitOnLoad = true;
+            this.card4.Click += new System.EventHandler(this.card4_Click);
             // 
             // card5
             // 
@@ -208,6 +214,7 @@
             this.card5.TabIndex = 12;
             this.card5.TabStop = false;
             this.card5.WaitOnLoad = true;
+            this.card5.Click += new System.EventHandler(this.card5_Click);
             // 
             // card10
             // 
@@ -221,6 +228,7 @@
             this.card10.TabIndex = 17;
             this.card10.TabStop = false;
             this.card10.WaitOnLoad = true;
+            this.card10.Click += new System.EventHandler(this.card10_Click);
             // 
             // card9
             // 
@@ -234,6 +242,7 @@
             this.card9.TabIndex = 16;
             this.card9.TabStop = false;
             this.card9.WaitOnLoad = true;
+            this.card9.Click += new System.EventHandler(this.card9_Click);
             // 
             // card8
             // 
@@ -248,6 +257,7 @@
             this.card8.TabIndex = 15;
             this.card8.TabStop = false;
             this.card8.WaitOnLoad = true;
+            this.card8.Click += new System.EventHandler(this.card8_Click);
             // 
             // card7
             // 
@@ -261,6 +271,7 @@
             this.card7.TabIndex = 14;
             this.card7.TabStop = false;
             this.card7.WaitOnLoad = true;
+            this.card7.Click += new System.EventHandler(this.card7_Click);
             // 
             // card6
             // 
@@ -274,6 +285,7 @@
             this.card6.TabIndex = 13;
             this.card6.TabStop = false;
             this.card6.WaitOnLoad = true;
+            this.card6.Click += new System.EventHandler(this.card6_Click);
             // 
             // Form
             // 
