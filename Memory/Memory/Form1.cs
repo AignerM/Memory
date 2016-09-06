@@ -12,6 +12,7 @@ namespace Memory
 {
     public partial class Form : System.Windows.Forms.Form
     {
+        public string location;
         public Form()
         {
             InitializeComponent();
@@ -20,6 +21,12 @@ namespace Memory
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+        public void BackImage(string location)
+        {
+            this.location = location;
         }
     }
 }
