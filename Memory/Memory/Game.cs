@@ -5,48 +5,91 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Memory
 {
     public class Game
     {
-        private Form card1;
+        private Form card;
         private Player player;
         private int totaltime;
-        private string[] paths = new string[5];
-        private List<Card> cards;
+        private Bitmap[] img = new Bitmap[5];
+        public List<Card> cards;
         string num;
         string tempnum;
         int tempzahl = 1;
-        string path;
+        Bitmap source;
+        int pos;
         Timer t;
         int turns;
+        int[] turnarray = new int[] { 0, 0 };
+
         private void Paths()
         {
-            for(int i = 0; i < 5; i++)
-            {
-                tempzahl = 1;
-                tempzahl = tempzahl + i;
-                tempnum = tempzahl.ToString();
-                num = tempnum + ".jpg";
-                paths[i] = "C:\\Users\\maigner\\Documents\\Memory\\Images\\Bild" + num;
-            }
+            int i = 0;
+            img[i] = Memory.Properties.Resources.Bild1;
+            i++;
+            img[i] = Memory.Properties.Resources.Bild2;
+            i++;
+            img[i] = Memory.Properties.Resources.Bild3;
+            i++;
+            img[i] = Memory.Properties.Resources.Bild4;
+            i++;
+            img[i] = Memory.Properties.Resources.Bild5;
+            
+
             InitCrads();
         }
+        public Bitmap Path(int pos)
+        {
+            foreach(Card card in cards)
+            {
+                if (pos == card.Pos)
+                {
+                    source = card.Img;
+                }
+            }
+            return source;
+        }
+
         public Game()
         {
             cards = new List<Card>();
             t = new Timer();
             Paths();
+            parse = true;
         }
 
-        public void Turns()
+        public void IdArray(int id)
         {
-            turns += 1;
-            if(turns % 2 == 0)
+            if (turnarray[0] == 0)
             {
-
+                turnarray[0] = id;
             }
+            else
+            {
+                turnarray[1] = id;
+            }
+            
+            if (turnarray[0] != 0 && turnarray[1] != 0)
+            {
+                Parse();
+            }
+        }
+        public bool parse;
+        public bool Parse()
+        {
+            parse = true;
+            if (turnarray[0]+1 == turnarray[1]||turnarray[0]-1==turnarray[1])
+            {
+                parse = true;
+            }
+            else
+            {
+                parse = false;
+            }
+            return parse;
         }
 
 
@@ -86,12 +129,12 @@ namespace Memory
             {
                 if (i % 2 == 0)
                 {
-                    path = paths[y];
+                    source = img[y];
                     s = 1;
                 }
                 else
                 {
-                    path = paths[y];
+                    source = img[y];
                     y++;
                     s = 2;
                 }
@@ -105,19 +148,48 @@ namespace Memory
 
                 
 
-                cards.Add(new Card(id,path));
+                cards.Add(new Card(id,source, pos));
             }
             SetCards();
         }
-
+        private bool CheckPos(int pos)
+        {
+            bool check = true;
+            foreach(Card card in cards)
+            {
+                if (card.Pos == pos)
+                {
+                    check = false;
+                }
+            }
+            return check;
+        }
+        public int Id(int pos)
+        {
+            int id=0;
+            foreach(Card card in cards)
+            {
+                if (card.Pos == pos)
+                {
+                    id = card.Id;
+                }
+            }
+            return id;
+        }
         private void SetCards()
         {
             List<Card> tempCards = cards;
             Random rnd = new Random();
+            for (int i = 0;i< 10; i++)
+            {
+                do
+                {
+                    int zufall = rnd.Next(0, tempCards.Count+1);
+                    pos = zufall;
+                } while (CheckPos(pos) == false);
+                cards[i].Pos = pos;
 
-            int zufall = rnd.Next(0, tempCards.Count);
-
-            tempCards.Remove(tempCards[zufall]);
+            }
         }
     }
 }

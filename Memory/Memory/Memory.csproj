@@ -84,6 +84,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Bild1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bild2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bild3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bild4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bild5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\Kartenrücken - Kopie.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

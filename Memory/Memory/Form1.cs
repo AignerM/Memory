@@ -8,14 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Memory
 {
     public partial class Form : System.Windows.Forms.Form
     {
         private bool started = false;
-        private Game turns;
+        private Game parse;
         private Game game;
+        private Card card;
+        Bitmap img;
         Timer t;
+       
 
         public Form()
         {
@@ -42,8 +46,18 @@ namespace Memory
         {
             t.Stop();
             started = false;
-            
-            
+            card1.Image = null;
+            card2.Image = null;
+            card3.Image = null;
+            card4.Image = null;
+            card5.Image = null;
+            card6.Image = null;
+            card7.Image = null;
+            card8.Image = null;
+            card9.Image = null;
+            card10.Image = null;
+
+
         }
 
         private void end_Click(object sender, EventArgs e)
@@ -53,9 +67,17 @@ namespace Memory
 
         public void card1_Click(object sender, EventArgs e)
         {
+            
             if (started)
             {
-                card1.Image = Image.FromFile("C:\\Users\\maigner\\Documents\\Memory\\Images\\Bild1.jpg");
+                img = game.Path(1);
+                card1.Image = img;
+                int id = game.Id(1);
+                game.IdArray(id);
+                if (game.parse == false)
+                {
+                    card1.Image = null;
+                }
             }
             else
             {
@@ -67,39 +89,127 @@ namespace Memory
 
         public void card2_Click(object sender, EventArgs e)
         {
-            turns.Turns();
+            if (started)
+            {
+                img = game.Path(2);
+                card2.Image = img;
+                int id = game.Id(2);
+                game.IdArray(id);
+                if (game.parse == false)
+                {
+                    
+                    card2.Image = null;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Zum Spielen drücken Sie auf Spiel Starten!");
+            }
+
         }
         public void card3_Click(object sender, EventArgs e)
         {
-            turns.Turns();
+            if (started)
+            {
+                img = game.Path(3);
+                card3.Image = img;
+                //turns.Turns();
+            }
+            else
+            {
+                MessageBox.Show("Zum Spielen drücken Sie auf Spiel Starten!");
+            }
         }
         public void card4_Click(object sender, EventArgs e)
         {
-            turns.Turns();
+            if (started)
+            {
+                img = game.Path(4);
+                card4.Image = img;
+                //turns.Turns();
+            }
+            else
+            {
+                MessageBox.Show("Zum Spielen drücken Sie auf Spiel Starten!");
+            }
         }
         public void card5_Click(object sender, EventArgs e)
         {
-            turns.Turns();
+            if (started)
+            {
+                img = game.Path(5);
+                card5.Image = img;
+                //turns.Turns();
+            }
+            else
+            {
+                MessageBox.Show("Zum Spielen drücken Sie auf Spiel Starten!");
+            }
         }
         public void card6_Click(object sender, EventArgs e)
         {
-            turns.Turns();
+            if (started)
+            {
+                img = game.Path(6);
+                card6.Image = img;
+                //turns.Turns();
+            }
+            else
+            {
+                MessageBox.Show("Zum Spielen drücken Sie auf Spiel Starten!");
+            }
         }
         public void card7_Click(object sender, EventArgs e)
         {
-            turns.Turns();
+            if (started)
+            {
+                img = game.Path(7);
+                card7.Image = img;
+                //turns.Turns();
+            }
+            else
+            {
+                MessageBox.Show("Zum Spielen drücken Sie auf Spiel Starten!");
+            }
         }
         public void card8_Click(object sender, EventArgs e)
         {
-            turns.Turns();
+            if (started)
+            {
+                img = game.Path(8);
+                card8.Image = img;
+                //turns.Turns();
+            }
+            else
+            {
+                MessageBox.Show("Zum Spielen drücken Sie auf Spiel Starten!");
+            }
         }
         public void card9_Click(object sender, EventArgs e)
         {
-            turns.Turns();
+            if (started)
+            {
+                img = game.Path(9);
+                card9.Image = img;
+                //turns.Turns();
+            }
+            else
+            {
+                MessageBox.Show("Zum Spielen drücken Sie auf Spiel Starten!");
+            }
         }
         public void card10_Click(object sender, EventArgs e)
         {
-            turns.Turns();
+            if (started)
+            {
+                img = game.Path(10);
+                card10.Image = img;
+                //turns.Turns();
+            }
+            else
+            {
+                MessageBox.Show("Zum Spielen drücken Sie auf Spiel Starten!");
+            }
         }
 
     }

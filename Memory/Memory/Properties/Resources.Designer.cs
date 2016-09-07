@@ -63,9 +63,59 @@ namespace Memory.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Bild1 {
+            get {
+                object obj = ResourceManager.GetObject("Bild1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bild2 {
+            get {
+                object obj = ResourceManager.GetObject("Bild2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bild3 {
+            get {
+                object obj = ResourceManager.GetObject("Bild3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bild4 {
+            get {
+                object obj = ResourceManager.GetObject("Bild4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bild5 {
+            get {
+                object obj = ResourceManager.GetObject("Bild5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Kartenrücken___Kopie {
             get {
-                object obj = ResourceManager.GetObject("Kartenrücken - Kopie", resourceCulture);
+                object obj = ResourceManager.GetObject("Kartenrücken___Kopie", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
