@@ -14,12 +14,11 @@ namespace Memory
     public partial class Form : System.Windows.Forms.Form
     {
         private bool started = false;
-        private Game parse;
         private Game game;
-        private Card card;
         Bitmap img;
         Timer t;
-       
+        int cardsturned = 0;
+        public int trys = 0;        
 
         public Form()
         {
@@ -45,7 +44,16 @@ namespace Memory
         private void stopp_Click(object sender, EventArgs e)
         {
             t.Stop();
-            started = false;
+            Reset();
+        }
+        private void Reset()
+        {
+            trys = 0;
+            if (game.turnarray[0] != 0 && game.turnarray[1] != 0)
+            {
+                game.turnarray[0] = 0;
+                game.turnarray[1] = 0;
+            }
             card1.Image = null;
             card2.Image = null;
             card3.Image = null;
@@ -56,28 +64,268 @@ namespace Memory
             card8.Image = null;
             card9.Image = null;
             card10.Image = null;
-
-
+            trycounter.Text = trys.ToString();
+            time.Text = "0";
+        }
+        public void GameComplete()
+        {
+            t.Stop();
+            MessageBox.Show("Sie haben das Spiel in "+game.TotalTime+" Sekunden und mit "+trys.ToString()+" Zügen beendet");
+            Reset();
         }
 
         private void end_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+        private void Turn(int pos)
+        {
+            
+            img = game.Path(pos);
+            switch (pos)
+            {
+                case 1:
+                    cardsturned++;
+
+                    if (cardsturned == 3)
+                    {
+                        game.Parse();
+                        if (game.parse == false)
+                        {
+                            TurnCard();
+                        }
+                        cardsturned = 1;
+                    }
+                    card1.Image = img;
+                    int id = game.Id(pos);
+                    game.IdArray(id);
+                    break;
+                case 2:
+                    cardsturned++;
+
+                    if (cardsturned == 3)
+                    {
+                        game.Parse();
+                        if (game.parse == false)
+                        {
+                            TurnCard();
+                        }
+                        cardsturned = 1;
+                    }
+                    card2.Image = img;
+                    id = game.Id(pos);
+                    game.IdArray(id);
+                    break;
+                case 3:
+                    cardsturned++;
+
+                    if (cardsturned == 3)
+                    {
+                        game.Parse();
+                        if (game.parse == false)
+                        {
+                            TurnCard();
+                        }
+                        cardsturned = 1;
+                    }
+                    card3.Image = img;
+                    id = game.Id(pos);
+                    game.IdArray(id);
+                    break;
+                case 4:
+                    cardsturned++;
+
+                    if (cardsturned == 3)
+                    {
+                        game.Parse();
+                        if (game.parse == false)
+                        {
+                            TurnCard();
+                        }
+                        cardsturned = 1;
+                    }
+                    card4.Image = img;
+                    id = game.Id(pos);
+                    game.IdArray(id);
+                    break;
+                case 5:
+                    cardsturned++;
+
+                    if (cardsturned == 3)
+                    {
+                        game.Parse();
+                        if (game.parse == false)
+                        {
+                            TurnCard();
+                        }
+                        cardsturned = 1;
+                    }
+                    card5.Image = img;
+                    id = game.Id(pos);
+                    game.IdArray(id);
+                    break;
+                case 6:
+                    cardsturned++;
+
+                    if (cardsturned == 3)
+                    {
+                        game.Parse();
+                        if (game.parse == false)
+                        {
+                            TurnCard();
+                        }
+                        cardsturned = 1;
+                    }
+                    card6.Image = img;
+                    id = game.Id(pos);
+                    game.IdArray(id);
+                    break;
+                case 7:
+                    cardsturned++;
+
+                    if (cardsturned == 3)
+                    {
+                        game.Parse();
+                        if (game.parse == false)
+                        {
+                            TurnCard();
+                        }
+                        cardsturned = 1;
+                    }
+                    card7.Image = img;
+                    id = game.Id(pos);
+                    game.IdArray(id);
+                    break;
+                case 8:
+                    cardsturned++;
+
+                    if (cardsturned == 3)
+                    {
+                        game.Parse();
+                        if (game.parse == false)
+                        {
+                            TurnCard();
+                        }
+                        cardsturned = 1;
+                    }
+                    card8.Image = img;
+                    id = game.Id(pos);
+                    game.IdArray(id);
+                    break;
+                case 9:
+                    cardsturned++;
+
+                    if (cardsturned == 3)
+                    {
+                        game.Parse();
+                        if (game.parse == false)
+                        {
+                            TurnCard();
+                        }
+                        cardsturned = 1;
+                    }
+                    card9.Image = img;
+                    id = game.Id(pos);
+                    game.IdArray(id);
+                    break;
+                case 10:
+                    cardsturned++;
+
+                    if (cardsturned == 3)
+                    {
+                        game.Parse();
+                        if (game.parse == false)
+                        {
+                            TurnCard();
+                        }
+                        cardsturned = 1;
+                    }
+                    card10.Image = img;
+                    id = game.Id(pos);
+                    game.IdArray(id);
+                    break;
+            }
+            trys++;
+            trycounter.Text = trys.ToString();
+            if (game.parsecount == 4 && cardsturned == 2)
+            {
+                game.Parse();
+            }
+            if (game.parsecount == 5)
+            {
+                GameComplete();
+            }
+
+
+
+        }
+
+        
+
+        private void TurnCard()
+        {
+            int turncard;
+            for (int i = 0; i < 2; i++)
+            {
+                turncard = game.turnarray[i];
+                foreach (Card card in game.cards)
+                {
+                    if (card.Id == turncard)
+                    {
+                        int pos = card.Pos;
+                        switch (pos)
+                        {
+                            case 1:
+                                card1.Image = null;
+                                break;
+                            case 2:
+                                card2.Image = null;
+                                break;
+                            case 3:
+                                card3.Image = null;
+                                break;
+                            case 4:
+                                card4.Image = null;
+                                break;
+                            case 5:
+                                card5.Image = null;
+                                break;
+                            case 6:
+                                card6.Image = null;
+                                break;
+                            case 7:
+                                card7.Image = null;
+                                break;
+                            case 8:
+                                card8.Image = null;
+                                break;
+                            case 9:
+                                card9.Image = null;
+                                break;
+                            case 10:
+                                card10.Image = null;
+                                break;
+                        }
+                    }
+                }
+            }
+            game.turnarray[0] = 0;
+            game.turnarray[1] = 0;
+
+        }
+           public int Trys
+        {
+           get { return trys; }
+           set { trys = value; }
+        }
+        
 
         public void card1_Click(object sender, EventArgs e)
         {
             
             if (started)
             {
-                img = game.Path(1);
-                card1.Image = img;
-                int id = game.Id(1);
-                game.IdArray(id);
-                if (game.parse == false)
-                {
-                    card1.Image = null;
-                }
+                Turn(1);
             }
             else
             {
@@ -91,29 +339,18 @@ namespace Memory
         {
             if (started)
             {
-                img = game.Path(2);
-                card2.Image = img;
-                int id = game.Id(2);
-                game.IdArray(id);
-                if (game.parse == false)
-                {
-                    
-                    card2.Image = null;
-                }
+                Turn(2);
             }
             else
             {
                 MessageBox.Show("Zum Spielen drücken Sie auf Spiel Starten!");
             }
-
         }
         public void card3_Click(object sender, EventArgs e)
         {
             if (started)
             {
-                img = game.Path(3);
-                card3.Image = img;
-                //turns.Turns();
+                Turn(3);
             }
             else
             {
@@ -124,9 +361,7 @@ namespace Memory
         {
             if (started)
             {
-                img = game.Path(4);
-                card4.Image = img;
-                //turns.Turns();
+                Turn(4);
             }
             else
             {
@@ -137,9 +372,7 @@ namespace Memory
         {
             if (started)
             {
-                img = game.Path(5);
-                card5.Image = img;
-                //turns.Turns();
+                Turn(5);
             }
             else
             {
@@ -150,9 +383,7 @@ namespace Memory
         {
             if (started)
             {
-                img = game.Path(6);
-                card6.Image = img;
-                //turns.Turns();
+                Turn(6);
             }
             else
             {
@@ -163,9 +394,7 @@ namespace Memory
         {
             if (started)
             {
-                img = game.Path(7);
-                card7.Image = img;
-                //turns.Turns();
+                Turn(7);
             }
             else
             {
@@ -176,9 +405,7 @@ namespace Memory
         {
             if (started)
             {
-                img = game.Path(8);
-                card8.Image = img;
-                //turns.Turns();
+                Turn(8);
             }
             else
             {
@@ -189,9 +416,7 @@ namespace Memory
         {
             if (started)
             {
-                img = game.Path(9);
-                card9.Image = img;
-                //turns.Turns();
+                Turn(9);
             }
             else
             {
@@ -202,9 +427,7 @@ namespace Memory
         {
             if (started)
             {
-                img = game.Path(10);
-                card10.Image = img;
-                //turns.Turns();
+                Turn(10);
             }
             else
             {
@@ -212,5 +435,10 @@ namespace Memory
             }
         }
 
+        private void trycounter_TextChanged(object sender, EventArgs e)
+        {
+            trycounter.Text = trys.ToString();
+            trycounter.Update();
+        }
     }
 }

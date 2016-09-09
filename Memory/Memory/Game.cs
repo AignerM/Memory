@@ -23,7 +23,8 @@ namespace Memory
         int pos;
         Timer t;
         int turns;
-        int[] turnarray = new int[] { 0, 0 };
+        public int[] turnarray = new int[] { 0, 0 };
+        public int parsecount;
 
         private void Paths()
         {
@@ -71,25 +72,26 @@ namespace Memory
             {
                 turnarray[1] = id;
             }
-            
-            if (turnarray[0] != 0 && turnarray[1] != 0)
-            {
-                Parse();
-            }
         }
         public bool parse;
-        public bool Parse()
+        public void Parse()
         {
+            
             parse = true;
             if (turnarray[0]+1 == turnarray[1]||turnarray[0]-1==turnarray[1])
             {
                 parse = true;
+                turnarray[0] = 0;
+                turnarray[1] = 0;
+                parsecount++;
             }
             else
             {
                 parse = false;
             }
-            return parse;
+            
+            
+            
         }
 
 
@@ -110,7 +112,7 @@ namespace Memory
             t.Start();
         }
 
-        private void Timer_Tick(object sender, EventArgs e)
+        public void Timer_Tick(object sender, EventArgs e)
         {
             totaltime++;
         }

@@ -102,6 +102,7 @@
             this.trycounter.Size = new System.Drawing.Size(100, 21);
             this.trycounter.TabIndex = 3;
             this.trycounter.Text = "0";
+            this.trycounter.TextChanged += new System.EventHandler(this.trycounter_TextChanged);
             // 
             // start
             // 
@@ -148,7 +149,7 @@
             // 
             // card1
             // 
-            this.card1.BackgroundImage = global::Memory.Properties.Resources.Kartenrücken___Kopie;
+            this.card1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("card1.BackgroundImage")));
             this.card1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.card1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.card1.InitialImage = ((System.Drawing.Image)(resources.GetObject("card1.InitialImage")));
