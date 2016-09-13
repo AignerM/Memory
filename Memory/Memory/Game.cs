@@ -6,23 +6,21 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Windows.Forms;
 using System.Drawing;
+using System.IO;
 
 namespace Memory
 {
     public class Game
     {
-        private Form card;
+        
         private Player player;
         private int totaltime;
         private Bitmap[] img = new Bitmap[5];
         public List<Card> cards;
-        string num;
-        string tempnum;
-        int tempzahl = 1;
+        public List<Highscore> highscores;
         Bitmap source;
         int pos;
         Timer t;
-        int turns;
         public int[] turnarray = new int[] { 0, 0 };
         public int parsecount;
 
@@ -56,6 +54,7 @@ namespace Memory
 
         public Game()
         {
+            highscores = new List<Highscore>();
             cards = new List<Card>();
             t = new Timer();
             Paths();
@@ -89,9 +88,6 @@ namespace Memory
             {
                 parse = false;
             }
-            
-            
-            
         }
 
 
@@ -116,10 +112,14 @@ namespace Memory
         {
             totaltime++;
         }
-
-        private void AddPlayer(string name)
+        
+        public void AddHighscore()
         {
-            player = new Player(name);
+            highscores.Add(new Highscore(player.name, player.time, player.trys));
+        }
+        public void AddPlayer(string name, int time, int trys)
+        {
+            player = new Player(name,time,trys);
         }
 
         public void InitCrads()

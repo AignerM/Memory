@@ -8,23 +8,30 @@ namespace Memory
 {
     public class Player
     {
-        private int score;
-        private string name;
+        public int time, trys;
+        public string name;
 
-        public int Score
+        
+        public int Time
         {
-            get { return score; }
-            set { score = value; }
+            get { return time; }
+            set { time = value; }
         }
         public string Name
         {
             get { return name; }
             set { name = value; }
         }
-
-        public Player(string name)
+        public int Trys
         {
-            score = 0;
+            get { return trys; }
+            set { trys = value; }
+        }
+
+        public Player(string name, int time, int trys)
+        {
+            this.time = time;
+            this.trys = trys;
             this.name = name;
         }
     }

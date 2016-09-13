@@ -37,26 +37,30 @@
             this.stopp = new System.Windows.Forms.Button();
             this.highscores = new System.Windows.Forms.Button();
             this.end = new System.Windows.Forms.Button();
-            this.card1 = new System.Windows.Forms.PictureBox();
-            this.card2 = new System.Windows.Forms.PictureBox();
-            this.card3 = new System.Windows.Forms.PictureBox();
-            this.card4 = new System.Windows.Forms.PictureBox();
-            this.card5 = new System.Windows.Forms.PictureBox();
+            this.name = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.nameaccept = new System.Windows.Forms.Button();
             this.card10 = new System.Windows.Forms.PictureBox();
             this.card9 = new System.Windows.Forms.PictureBox();
             this.card8 = new System.Windows.Forms.PictureBox();
             this.card7 = new System.Windows.Forms.PictureBox();
             this.card6 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.card1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.card2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.card3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.card4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.card5)).BeginInit();
+            this.card5 = new System.Windows.Forms.PictureBox();
+            this.card4 = new System.Windows.Forms.PictureBox();
+            this.card3 = new System.Windows.Forms.PictureBox();
+            this.card2 = new System.Windows.Forms.PictureBox();
+            this.card1 = new System.Windows.Forms.PictureBox();
+            this.highscorelist = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.card10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.card9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.card8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.card7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.card6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -135,6 +139,7 @@
             this.highscores.TabIndex = 6;
             this.highscores.Text = "Highscores";
             this.highscores.UseVisualStyleBackColor = true;
+            this.highscores.Click += new System.EventHandler(this.highscores_Click);
             // 
             // end
             // 
@@ -147,75 +152,34 @@
             this.end.UseVisualStyleBackColor = true;
             this.end.Click += new System.EventHandler(this.end_Click);
             // 
-            // card1
+            // name
             // 
-            this.card1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("card1.BackgroundImage")));
-            this.card1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.card1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.card1.InitialImage = ((System.Drawing.Image)(resources.GetObject("card1.InitialImage")));
-            this.card1.Location = new System.Drawing.Point(31, 27);
-            this.card1.Name = "card1";
-            this.card1.Size = new System.Drawing.Size(120, 180);
-            this.card1.TabIndex = 8;
-            this.card1.TabStop = false;
-            this.card1.WaitOnLoad = true;
-            this.card1.Click += new System.EventHandler(this.card1_Click);
+            this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.name.Location = new System.Drawing.Point(410, 645);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(156, 28);
+            this.name.TabIndex = 18;
             // 
-            // card2
+            // label3
             // 
-            this.card2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("card2.BackgroundImage")));
-            this.card2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.card2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.card2.InitialImage = ((System.Drawing.Image)(resources.GetObject("card2.InitialImage")));
-            this.card2.Location = new System.Drawing.Point(210, 27);
-            this.card2.Name = "card2";
-            this.card2.Size = new System.Drawing.Size(120, 180);
-            this.card2.TabIndex = 9;
-            this.card2.TabStop = false;
-            this.card2.WaitOnLoad = true;
-            this.card2.Click += new System.EventHandler(this.card2_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(410, 617);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 24);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Name:";
             // 
-            // card3
+            // nameaccept
             // 
-            this.card3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("card3.BackgroundImage")));
-            this.card3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.card3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.card3.InitialImage = ((System.Drawing.Image)(resources.GetObject("card3.InitialImage")));
-            this.card3.Location = new System.Drawing.Point(391, 27);
-            this.card3.Name = "card3";
-            this.card3.Size = new System.Drawing.Size(120, 180);
-            this.card3.TabIndex = 10;
-            this.card3.TabStop = false;
-            this.card3.WaitOnLoad = true;
-            this.card3.Click += new System.EventHandler(this.card3_Click);
-            // 
-            // card4
-            // 
-            this.card4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("card4.BackgroundImage")));
-            this.card4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.card4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.card4.InitialImage = ((System.Drawing.Image)(resources.GetObject("card4.InitialImage")));
-            this.card4.Location = new System.Drawing.Point(561, 27);
-            this.card4.Name = "card4";
-            this.card4.Size = new System.Drawing.Size(120, 180);
-            this.card4.TabIndex = 11;
-            this.card4.TabStop = false;
-            this.card4.WaitOnLoad = true;
-            this.card4.Click += new System.EventHandler(this.card4_Click);
-            // 
-            // card5
-            // 
-            this.card5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("card5.BackgroundImage")));
-            this.card5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.card5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.card5.InitialImage = ((System.Drawing.Image)(resources.GetObject("card5.InitialImage")));
-            this.card5.Location = new System.Drawing.Point(731, 27);
-            this.card5.Name = "card5";
-            this.card5.Size = new System.Drawing.Size(120, 180);
-            this.card5.TabIndex = 12;
-            this.card5.TabStop = false;
-            this.card5.WaitOnLoad = true;
-            this.card5.Click += new System.EventHandler(this.card5_Click);
+            this.nameaccept.Location = new System.Drawing.Point(606, 645);
+            this.nameaccept.Name = "nameaccept";
+            this.nameaccept.Size = new System.Drawing.Size(85, 28);
+            this.nameaccept.TabIndex = 20;
+            this.nameaccept.Text = "Accept";
+            this.nameaccept.UseVisualStyleBackColor = true;
+            this.nameaccept.Click += new System.EventHandler(this.nameaccept_Click);
             // 
             // card10
             // 
@@ -288,11 +252,95 @@
             this.card6.WaitOnLoad = true;
             this.card6.Click += new System.EventHandler(this.card6_Click);
             // 
+            // card5
+            // 
+            this.card5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("card5.BackgroundImage")));
+            this.card5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.card5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card5.InitialImage = ((System.Drawing.Image)(resources.GetObject("card5.InitialImage")));
+            this.card5.Location = new System.Drawing.Point(731, 27);
+            this.card5.Name = "card5";
+            this.card5.Size = new System.Drawing.Size(120, 180);
+            this.card5.TabIndex = 12;
+            this.card5.TabStop = false;
+            this.card5.WaitOnLoad = true;
+            this.card5.Click += new System.EventHandler(this.card5_Click);
+            // 
+            // card4
+            // 
+            this.card4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("card4.BackgroundImage")));
+            this.card4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.card4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card4.InitialImage = ((System.Drawing.Image)(resources.GetObject("card4.InitialImage")));
+            this.card4.Location = new System.Drawing.Point(561, 27);
+            this.card4.Name = "card4";
+            this.card4.Size = new System.Drawing.Size(120, 180);
+            this.card4.TabIndex = 11;
+            this.card4.TabStop = false;
+            this.card4.WaitOnLoad = true;
+            this.card4.Click += new System.EventHandler(this.card4_Click);
+            // 
+            // card3
+            // 
+            this.card3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("card3.BackgroundImage")));
+            this.card3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.card3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card3.InitialImage = ((System.Drawing.Image)(resources.GetObject("card3.InitialImage")));
+            this.card3.Location = new System.Drawing.Point(391, 27);
+            this.card3.Name = "card3";
+            this.card3.Size = new System.Drawing.Size(120, 180);
+            this.card3.TabIndex = 10;
+            this.card3.TabStop = false;
+            this.card3.WaitOnLoad = true;
+            this.card3.Click += new System.EventHandler(this.card3_Click);
+            // 
+            // card2
+            // 
+            this.card2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("card2.BackgroundImage")));
+            this.card2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.card2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card2.InitialImage = ((System.Drawing.Image)(resources.GetObject("card2.InitialImage")));
+            this.card2.Location = new System.Drawing.Point(210, 27);
+            this.card2.Name = "card2";
+            this.card2.Size = new System.Drawing.Size(120, 180);
+            this.card2.TabIndex = 9;
+            this.card2.TabStop = false;
+            this.card2.WaitOnLoad = true;
+            this.card2.Click += new System.EventHandler(this.card2_Click);
+            // 
+            // card1
+            // 
+            this.card1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("card1.BackgroundImage")));
+            this.card1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.card1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.card1.InitialImage = ((System.Drawing.Image)(resources.GetObject("card1.InitialImage")));
+            this.card1.Location = new System.Drawing.Point(31, 27);
+            this.card1.Name = "card1";
+            this.card1.Size = new System.Drawing.Size(120, 180);
+            this.card1.TabIndex = 8;
+            this.card1.TabStop = false;
+            this.card1.WaitOnLoad = true;
+            this.card1.Click += new System.EventHandler(this.card1_Click);
+            // 
+            // highscorelist
+            // 
+            this.highscorelist.Location = new System.Drawing.Point(179, 45);
+            this.highscorelist.Name = "highscorelist";
+            this.highscorelist.ReadOnly = true;
+            this.highscorelist.Size = new System.Drawing.Size(594, 406);
+            this.highscorelist.TabIndex = 22;
+            this.highscorelist.Text = "";
+            this.highscorelist.Visible = false;
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1119, 719);
+            this.Controls.Add(this.highscorelist);
+            this.Controls.Add(this.nameaccept);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.name);
             this.Controls.Add(this.card10);
             this.Controls.Add(this.card9);
             this.Controls.Add(this.card8);
@@ -316,16 +364,16 @@
             this.Name = "Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Memory";
-            ((System.ComponentModel.ISupportInitialize)(this.card1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.card2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.card3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.card4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.card5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.card10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.card9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.card8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.card7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.card6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,6 +399,10 @@
         public System.Windows.Forms.PictureBox card8;
         public System.Windows.Forms.PictureBox card7;
         public System.Windows.Forms.PictureBox card6;
+        private System.Windows.Forms.TextBox name;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button nameaccept;
+        private System.Windows.Forms.RichTextBox highscorelist;
     }
 }
 

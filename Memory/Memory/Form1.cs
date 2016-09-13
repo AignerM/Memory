@@ -13,12 +13,14 @@ namespace Memory
 {
     public partial class Form : System.Windows.Forms.Form
     {
+        private bool shown = false;
         private bool started = false;
         private Game game;
         Bitmap img;
         Timer t;
         int cardsturned = 0;
-        public int trys = 0;        
+        public int trys = 0;
+        public string playerName;    
 
         public Form()
         {
@@ -26,7 +28,7 @@ namespace Memory
             t = new Timer();
             t.Tick += T_Tick;
         }
-
+        
         private void T_Tick(object sender, EventArgs e)
         {
             this.time.Text = game.TotalTime.ToString();
@@ -34,11 +36,23 @@ namespace Memory
 
         private void start_Click(object sender, EventArgs e)
         {
-            this.game = new Game();
-            game.Timer();
-            t.Interval = 1000;
-            t.Start();
-            started = true;
+            if (playerName == null)
+            {
+                MessageBox.Show("Bitte geben Sie zuerst einen Namen an!");
+            }
+            else
+            {
+                if (shown == true)
+                {
+                    highscorelist.Hide();
+                    shown = false;
+                }
+                this.game = new Game();
+                game.Timer();
+                t.Interval = 1000;
+                t.Start();
+                started = true;
+            }
         }
 
         private void stopp_Click(object sender, EventArgs e)
@@ -66,11 +80,32 @@ namespace Memory
             card10.Image = null;
             trycounter.Text = trys.ToString();
             time.Text = "0";
+            name.Text = null;
+            started = false;
+            playerName = null;
         }
         public void GameComplete()
         {
             t.Stop();
-            MessageBox.Show("Sie haben das Spiel in "+game.TotalTime+" Sekunden und mit "+trys.ToString()+" Zügen beendet");
+            game.AddPlayer(playerName, game.TotalTime, trys);
+            MessageBox.Show(game.Player.Name+" hat das Spiel in "+game.Player.Time+" Sekunden und mit "+game.Player.Trys+" Zügen beendet");
+            game.AddHighscore();
+            if (shown == false)
+            {
+                foreach (Highscore highscore in game.highscores)
+                {
+                    highscorelist.Text += highscore.HName + " ";
+                    highscorelist.Text += highscore.HTime.ToString() + " Sekunden ";
+                    highscorelist.Text += highscore.HTrys.ToString() + " Versuche\n";
+                }
+                highscorelist.Show();
+                shown = true;
+            }
+            else
+            {
+                highscorelist.Hide();
+                shown = false;
+            }
             Reset();
         }
 
@@ -439,6 +474,33 @@ namespace Memory
         {
             trycounter.Text = trys.ToString();
             trycounter.Update();
+        }
+
+        private void nameaccept_Click(object sender, EventArgs e)
+        {
+            if (name.Text == "")
+            {
+                MessageBox.Show("Bitte geben Sie einen Namen ein!");
+            }
+            else
+            {
+                playerName = name.Text;
+            }
+        }
+
+        private void highscores_Click(object sender, EventArgs e)
+        {
+           if (shown == false)
+            {
+                highscorelist.Show();
+                shown = true;
+            }
+           else
+            {
+                highscorelist.Hide();
+                shown = false;
+            }
+            
         }
     }
 }
