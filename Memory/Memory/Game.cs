@@ -23,7 +23,7 @@ namespace Memory
         Timer t;
         public int[] turnarray = new int[] { 0, 0 };
         public int parsecount;
-
+        
         private void Paths()
         {
             int i = 0;
@@ -116,6 +116,7 @@ namespace Memory
         public void AddHighscore()
         {
             highscores.Add(new Highscore(player.name, player.time, player.trys));
+            
         }
         public void AddPlayer(string name, int time, int trys)
         {
