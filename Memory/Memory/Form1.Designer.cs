@@ -113,7 +113,7 @@
             this.start.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.start.Location = new System.Drawing.Point(925, 76);
             this.start.Name = "start";
-            this.start.Size = new System.Drawing.Size(149, 35);
+            this.start.Size = new System.Drawing.Size(171, 35);
             this.start.TabIndex = 4;
             this.start.Text = "Spiel Starten";
             this.start.UseVisualStyleBackColor = true;
@@ -124,9 +124,9 @@
             this.stopp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stopp.Location = new System.Drawing.Point(925, 138);
             this.stopp.Name = "stopp";
-            this.stopp.Size = new System.Drawing.Size(149, 35);
+            this.stopp.Size = new System.Drawing.Size(171, 35);
             this.stopp.TabIndex = 5;
-            this.stopp.Text = "Spiel Stoppen";
+            this.stopp.Text = "Spiel Abbrechen";
             this.stopp.UseVisualStyleBackColor = true;
             this.stopp.Click += new System.EventHandler(this.stopp_Click);
             // 
@@ -135,7 +135,7 @@
             this.highscores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.highscores.Location = new System.Drawing.Point(925, 203);
             this.highscores.Name = "highscores";
-            this.highscores.Size = new System.Drawing.Size(149, 35);
+            this.highscores.Size = new System.Drawing.Size(171, 35);
             this.highscores.TabIndex = 6;
             this.highscores.Text = "Highscores";
             this.highscores.UseVisualStyleBackColor = true;
@@ -146,7 +146,7 @@
             this.end.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.end.Location = new System.Drawing.Point(925, 269);
             this.end.Name = "end";
-            this.end.Size = new System.Drawing.Size(149, 35);
+            this.end.Size = new System.Drawing.Size(171, 35);
             this.end.TabIndex = 7;
             this.end.Text = "Beenden";
             this.end.UseVisualStyleBackColor = true;
@@ -157,6 +157,7 @@
             this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.name.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.name.Location = new System.Drawing.Point(410, 645);
+            this.name.MaxLength = 14;
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(156, 28);
             this.name.TabIndex = 18;

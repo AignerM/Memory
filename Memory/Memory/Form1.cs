@@ -45,7 +45,7 @@ namespace Memory
         {
             if (playerName == null)
             {
-                MessageBox.Show("Bitte geben Sie zuerst einen Namen an!");
+                MessageBox.Show("Bitte geben Sie zuerst einen Namen an und klicken Sie die Accept-Taste!");
             }
             else
             {
@@ -81,7 +81,11 @@ namespace Memory
         private void stopp_Click(object sender, EventArgs e)
         {
             t.Stop();
-            Reset();
+            if (started == true)
+            {
+                Reset();
+            }
+            
             
         }
         private void Reset()
@@ -130,20 +134,20 @@ namespace Memory
                 }
             }
             HighscoreSortierung();
+            for (int i = 0; i < 5; i++)
+            {
+                if (highscoreArray[i, 0] != null)
+                {
+                    highscorelist.Text += (x + 1) + ". " + highscoreArray[i, 0] + " " + highscoreArray[i, 1] + " Sekunden " + highscoreArray[i, 2] + " Versuche\n";
+                    x++;
+                }
+                else
+                {
+                    break;
+                }
+            }
             if (shown == false)
             {
-                for(int i = 0; i < 5; i++)
-                {
-                    if (highscoreArray[i, 0] != null)
-                    {
-                        highscorelist.Text += (x + 1) + ". " + highscoreArray[i, 0] + " " + highscoreArray[i, 1] + " Sekunden " + highscoreArray[i, 2] + " Versuche\n";
-                        x++;
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
                 highscorelist.Show();
                 shown = true;
             }
@@ -165,7 +169,16 @@ namespace Memory
                 {
                     if (Convert.ToInt32(highscoreArray[i,1])>Convert.ToInt32(highscoreArray[i+1,1]) && highscoreArray[i,0] != null && highscoreArray[i+1,0] != null)
                     {
-                        for(int y = 0; y < 3; y++)
+                        for (int y = 0; y < 3; y++)
+                        {
+                            tempArray[y] = highscoreArray[i, y];
+                            highscoreArray[i, y] = highscoreArray[i + 1, y];
+                            highscoreArray[i + 1, y] = tempArray[y];
+                            passed = false;
+                        }
+                    }else if (Convert.ToInt32(highscoreArray[i, 2]) > Convert.ToInt32(highscoreArray[i + 1, 2])&& Convert.ToInt32(highscoreArray[i, 1]) == Convert.ToInt32(highscoreArray[i + 1, 1]))
+                    {
+                        for (int y = 0; y < 3; y++)
                         {
                             tempArray[y] = highscoreArray[i, y];
                             highscoreArray[i, y] = highscoreArray[i + 1, y];
