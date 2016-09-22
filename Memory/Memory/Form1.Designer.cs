@@ -325,11 +325,14 @@
             // 
             // highscorelist
             // 
+            this.highscorelist.BackColor = System.Drawing.SystemColors.Window;
+            this.highscorelist.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.highscorelist.Enabled = false;
             this.highscorelist.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.highscorelist.Location = new System.Drawing.Point(179, 45);
+            this.highscorelist.Location = new System.Drawing.Point(31, 138);
             this.highscorelist.Name = "highscorelist";
             this.highscorelist.ReadOnly = true;
-            this.highscorelist.Size = new System.Drawing.Size(594, 406);
+            this.highscorelist.Size = new System.Drawing.Size(820, 200);
             this.highscorelist.TabIndex = 22;
             this.highscorelist.Text = "";
             this.highscorelist.Visible = false;
