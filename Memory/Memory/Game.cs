@@ -12,7 +12,7 @@ namespace Memory
 {
     public class Game
     {
-        
+        public bool parse;
         private Player player;
         private int totaltime;
         private Bitmap[] img = new Bitmap[5];
@@ -37,9 +37,9 @@ namespace Memory
             i++;
             img[i] = Memory.Properties.Resources.Bild5;
             
-
             InitCrads();
         }
+        //Zuweisung der Bilder
         public Bitmap Path(int pos)
         {
             foreach(Card card in cards)
@@ -72,10 +72,9 @@ namespace Memory
                 turnarray[1] = id;
             }
         }
-        public bool parse;
+        //Überprüfen ob es sich um die gleichen Karten handelt
         public void Parse()
         {
-            
             parse = true;
             if (turnarray[0]+1 == turnarray[1]||turnarray[0]-1==turnarray[1])
             {
@@ -89,20 +88,20 @@ namespace Memory
                 parse = false;
             }
         }
-
-
+        
         public Player Player
         {
             get { return player; }
             set { player = value; }
         }
+
         public int TotalTime
         {
             get { return totaltime; }
         }
+
         public void Timer()
         {
-            
             t.Interval = 1000;
             t.Tick += Timer_Tick;
             t.Start();
@@ -116,8 +115,8 @@ namespace Memory
         public void AddHighscore()
         {
             highscores.Add(new Highscore(player.name, player.time, player.trys));
-            
         }
+
         public void AddPlayer(string name, int time, int trys)
         {
             player = new Player(name,time,trys);
@@ -148,13 +147,11 @@ namespace Memory
                 }
 
                 int id = s + idc;
-
-                
-
                 cards.Add(new Card(id,source, pos));
             }
             SetCards();
         }
+
         private bool CheckPos(int pos)
         {
             bool check = true;
@@ -167,6 +164,7 @@ namespace Memory
             }
             return check;
         }
+
         public int Id(int pos)
         {
             int id=0;
@@ -179,6 +177,7 @@ namespace Memory
             }
             return id;
         }
+
         private void SetCards()
         {
             List<Card> tempCards = cards;

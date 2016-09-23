@@ -13,7 +13,6 @@ namespace Memory
 {
     public partial class Form : System.Windows.Forms.Form
     {
-        
         private bool shown = false;
         private bool started = false;
         private Game game;
@@ -62,13 +61,12 @@ namespace Memory
                 CheckGame();
             }
         }
+
         private void CheckGame()
         {
             if (started == true)
             {
                 start.Enabled = false;
-                
-                
             }
             else
             {
@@ -85,9 +83,8 @@ namespace Memory
             {
                 Reset();
             }
-            
-            
         }
+
         private void Reset()
         {
             trys = 0;
@@ -114,6 +111,7 @@ namespace Memory
             playerName = null;
             CheckGame();
         }
+
         public void GameComplete()
         {
             highscorelist.Text = null;
@@ -198,9 +196,9 @@ namespace Memory
         {
             Application.Exit();
         }
+
         private void Turn(int pos)
         {
-            
             img = game.Path(pos);
             switch (pos)
             {
@@ -213,7 +211,6 @@ namespace Memory
                         if (game.parse == false)
                         {
                             TurnCard();
-                            
                         }
                         
                         cardsturned = 1;
@@ -231,7 +228,6 @@ namespace Memory
                         if (game.parse == false)
                         {
                             TurnCard();
-                            
                         }
                         cardsturned = 1;
                     }
@@ -248,7 +244,6 @@ namespace Memory
                         if (game.parse == false)
                         {
                             TurnCard();
-                            
                         }
                         cardsturned = 1;
                     }
@@ -265,7 +260,6 @@ namespace Memory
                         if (game.parse == false)
                         {
                             TurnCard();
-                            
                         }
                         cardsturned = 1;
                     }
@@ -282,7 +276,6 @@ namespace Memory
                         if (game.parse == false)
                         {
                             TurnCard();
-                            
                         }
                         cardsturned = 1;
                     }
@@ -299,7 +292,6 @@ namespace Memory
                         if (game.parse == false)
                         {
                             TurnCard();
-                            
                         }
                         cardsturned = 1;
                     }
@@ -316,7 +308,6 @@ namespace Memory
                         if (game.parse == false)
                         {
                             TurnCard();
-                            
                         }
                         cardsturned = 1;
                     }
@@ -333,7 +324,6 @@ namespace Memory
                         if (game.parse == false)
                         {
                             TurnCard();
-                            
                         }
                         cardsturned = 1;
                     }
@@ -384,13 +374,8 @@ namespace Memory
             {
                 GameComplete();
             }
-
-
-
         }
-
         
-
         private void TurnCard()
         {
             int turncard;
@@ -452,16 +437,15 @@ namespace Memory
             game.turnarray[1] = 0;
 
         }
+
            public int Trys
         {
            get { return trys; }
            set { trys = value; }
         }
         
-
         public void card1_Click(object sender, EventArgs e)
         {
-            
             if (started)
             {
                 Turn(1);
@@ -470,8 +454,6 @@ namespace Memory
             {
                 MessageBox.Show("Zum Spielen drücken Sie auf Spiel Starten!");
             }
-            
-            
         }
 
         public void card2_Click(object sender, EventArgs e)
@@ -485,6 +467,7 @@ namespace Memory
                 MessageBox.Show("Zum Spielen drücken Sie auf Spiel Starten!");
             }
         }
+
         public void card3_Click(object sender, EventArgs e)
         {
             if (started)
@@ -496,6 +479,7 @@ namespace Memory
                 MessageBox.Show("Zum Spielen drücken Sie auf Spiel Starten!");
             }
         }
+
         public void card4_Click(object sender, EventArgs e)
         {
             if (started)
@@ -507,6 +491,7 @@ namespace Memory
                 MessageBox.Show("Zum Spielen drücken Sie auf Spiel Starten!");
             }
         }
+
         public void card5_Click(object sender, EventArgs e)
         {
             if (started)
@@ -518,6 +503,7 @@ namespace Memory
                 MessageBox.Show("Zum Spielen drücken Sie auf Spiel Starten!");
             }
         }
+
         public void card6_Click(object sender, EventArgs e)
         {
             if (started)
@@ -529,6 +515,7 @@ namespace Memory
                 MessageBox.Show("Zum Spielen drücken Sie auf Spiel Starten!");
             }
         }
+
         public void card7_Click(object sender, EventArgs e)
         {
             if (started)
@@ -540,6 +527,7 @@ namespace Memory
                 MessageBox.Show("Zum Spielen drücken Sie auf Spiel Starten!");
             }
         }
+
         public void card8_Click(object sender, EventArgs e)
         {
             if (started)
@@ -551,6 +539,7 @@ namespace Memory
                 MessageBox.Show("Zum Spielen drücken Sie auf Spiel Starten!");
             }
         }
+
         public void card9_Click(object sender, EventArgs e)
         {
             if (started)
@@ -562,6 +551,7 @@ namespace Memory
                 MessageBox.Show("Zum Spielen drücken Sie auf Spiel Starten!");
             }
         }
+
         public void card10_Click(object sender, EventArgs e)
         {
             if (started)
@@ -606,8 +596,6 @@ namespace Memory
                 highscorelist.Hide();
                 shown = false;
             }
-            
-            
         }
     }
 }

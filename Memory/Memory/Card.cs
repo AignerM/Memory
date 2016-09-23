@@ -26,11 +26,13 @@ namespace Memory
             get { return pos; }
             set { pos = value; }
         }
+
         public int Id
         {
             get { return id; }
             set { id = value; }
         }
+
         public Bitmap Img
         {
             get { return img; }

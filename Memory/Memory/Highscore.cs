@@ -17,6 +17,7 @@ namespace Memory
             this.hTime = time;
             this.hTrys = trys;
         }
+
         public int HTime
         {
             get { return hTime; }
