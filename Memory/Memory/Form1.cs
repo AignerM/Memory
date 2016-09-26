@@ -83,6 +83,10 @@ namespace Memory
             {
                 Reset();
             }
+            nameaccept.Enabled = true;
+            name.Enabled = true;
+            name.Text = null;
+            playerName = null;
         }
 
         private void Reset()
@@ -103,7 +107,7 @@ namespace Memory
             card8.Image = null; card8.Enabled = true;
             card9.Image = null; card9.Enabled = true;
             card10.Image = null; card10.Enabled = true; ;
-
+            cardsturned = 0;
             trycounter.Text = trys.ToString();
             time.Text = "0";
             name.Text = null;
@@ -118,7 +122,7 @@ namespace Memory
             x = 0;
             t.Stop();
             game.AddPlayer(playerName, game.TotalTime, trys);
-            MessageBox.Show(game.Player.Name+" hat das Spiel in "+game.Player.Time+" Sekunden und mit "+game.Player.Trys+" Zügen beendet");
+            MessageBox.Show(game.Player.Name + " hat das Spiel in " + game.Player.Time + " Sekunden und mit " + game.Player.Trys + " Zügen beendet");
             game.AddHighscore();
             
             for (int i = 0; i < 6; i++)
@@ -214,6 +218,7 @@ namespace Memory
                         }
                         
                         cardsturned = 1;
+                        trys++;
                     }
                     card1.Image = img;
                     int id = game.Id(pos);
@@ -230,6 +235,7 @@ namespace Memory
                             TurnCard();
                         }
                         cardsturned = 1;
+                        trys++;
                     }
                     card2.Image = img;
                     id = game.Id(pos);
@@ -246,6 +252,7 @@ namespace Memory
                             TurnCard();
                         }
                         cardsturned = 1;
+                        trys++;
                     }
                     card3.Image = img;
                     id = game.Id(pos);
@@ -262,6 +269,7 @@ namespace Memory
                             TurnCard();
                         }
                         cardsturned = 1;
+                        trys++;
                     }
                     card4.Image = img;
                     id = game.Id(pos);
@@ -278,6 +286,7 @@ namespace Memory
                             TurnCard();
                         }
                         cardsturned = 1;
+                        trys++;
                     }
                     card5.Image = img;
                     id = game.Id(pos);
@@ -294,6 +303,7 @@ namespace Memory
                             TurnCard();
                         }
                         cardsturned = 1;
+                        trys++;
                     }
                     card6.Image = img;
                     id = game.Id(pos);
@@ -310,6 +320,7 @@ namespace Memory
                             TurnCard();
                         }
                         cardsturned = 1;
+                        trys++;
                     }
                     card7.Image = img;
                     id = game.Id(pos);
@@ -326,6 +337,7 @@ namespace Memory
                             TurnCard();
                         }
                         cardsturned = 1;
+                        trys++;
                     }
                     card8.Image = img;
                     id = game.Id(pos);
@@ -342,6 +354,7 @@ namespace Memory
                             TurnCard();
                         }
                         cardsturned = 1;
+                        trys++;
                     }
                     card9.Image = img;
                     id = game.Id(pos);
@@ -358,13 +371,14 @@ namespace Memory
                             TurnCard();
                         }
                         cardsturned = 1;
+                        trys++;
                     }
                     card10.Image = img;
                     id = game.Id(pos);
                     game.IdArray(id);
                     break;
             }
-            trys++;
+            
             trycounter.Text = trys.ToString();
             if (game.parsecount == 4 && cardsturned == 2)
             {
