@@ -10,7 +10,6 @@ namespace Memory
     {
         public int time, trys;
         public string name;
-
         
         public int Time
         {
