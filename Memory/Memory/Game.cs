@@ -8,14 +8,13 @@ namespace Memory
     public class Game
     {
         public bool parse;
-        private Player player;
         private int totaltime;
-        private Bitmap[] img = new Bitmap[5];
+        readonly private Bitmap[] img = new Bitmap[5];
         public List<Card> cards;
         public List<Highscore> highscores;
         Bitmap source;
         int pos;
-        Timer t;
+        readonly Timer t;
         public int[] turnarray = new int[] { 0, 0 };
         public int parsecount;
         
@@ -84,11 +83,7 @@ namespace Memory
             }
         }
         
-        public Player Player
-        {
-            get { return player; }
-            set { player = value; }
-        }
+        public Player Player { get; set; }
 
         public int TotalTime
         {
@@ -109,12 +104,12 @@ namespace Memory
         
         public void AddHighscore()
         {
-            highscores.Add(new Highscore(player.name, player.time, player.trys));
+            highscores.Add(new Highscore(Player.Name, Player.Time, Player.Trys));
         }
 
         public void AddPlayer(string name, int time, int trys)
         {
-            player = new Player(name,time,trys);
+            Player = new Player(name,time,trys);
         }
 
         public void InitCrads()

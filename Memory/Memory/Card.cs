@@ -4,33 +4,18 @@ namespace Memory
 {
     public class Card
     {
-        private int id;
-        private Bitmap img;
-        private int pos;
 
         public Card(int id, Bitmap source, int pos)
         {
-            this.id = id;
-            this.img = source;
-            this.pos = pos;
+            this.Id = id;
+            this.Img = source;
+            this.Pos = pos;
         }
 
-        public int Pos
-        {
-            get { return pos; }
-            set { pos = value; }
-        }
+        public int Pos { get; set; }
 
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
+        public int Id { get; set; }
 
-        public Bitmap Img
-        {
-            get { return img; }
-            set { img = value; }
-        }
+        public Bitmap Img { get; set; }
     }
 }

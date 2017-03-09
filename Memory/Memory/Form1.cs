@@ -13,7 +13,6 @@ namespace Memory
         Bitmap img;
         Timer t;
         int cardsturned = 0;
-        public int trys = 0;
         public string playerName;
         int x = 0;
         public string[,] highscoreArray = new string[6, 3];
@@ -85,7 +84,7 @@ namespace Memory
 
         private void Reset()
         {
-            trys = 0;
+            Trys = 0;
             if (game.turnarray[0] != 0 && game.turnarray[1] != 0)
             {
                 game.turnarray[0] = 0;
@@ -102,7 +101,7 @@ namespace Memory
             card9.Image = null; card9.Enabled = true;
             card10.Image = null; card10.Enabled = true; ;
             cardsturned = 0;
-            trycounter.Text = trys.ToString();
+            trycounter.Text = Trys.ToString();
             time.Text = "0";
             name.Text = null;
             started = false;
@@ -115,7 +114,7 @@ namespace Memory
             highscorelist.Text = null;
             x = 0;
             t.Stop();
-            game.AddPlayer(playerName, game.TotalTime, trys);
+            game.AddPlayer(playerName, game.TotalTime, Trys);
             MessageBox.Show(game.Player.Name + " hat das Spiel in " + game.Player.Time + " Sekunden und mit " + game.Player.Trys + " Zügen beendet");
             game.AddHighscore();
             
@@ -157,22 +156,13 @@ namespace Memory
 
         private void HighscoreSortierung()
         {
-            bool passed = true;
+            bool passed;
             do
             {
                 passed = true;
                 for (int i = 0; i < 5; i++)
                 {
-                    if (Convert.ToInt32(highscoreArray[i,1])>Convert.ToInt32(highscoreArray[i+1,1]) && highscoreArray[i,0] != null && highscoreArray[i+1,0] != null)
-                    {
-                        for (int y = 0; y < 3; y++)
-                        {
-                            tempArray[y] = highscoreArray[i, y];
-                            highscoreArray[i, y] = highscoreArray[i + 1, y];
-                            highscoreArray[i + 1, y] = tempArray[y];
-                            passed = false;
-                        }
-                    }else if (Convert.ToInt32(highscoreArray[i, 2]) > Convert.ToInt32(highscoreArray[i + 1, 2])&& Convert.ToInt32(highscoreArray[i, 1]) == Convert.ToInt32(highscoreArray[i + 1, 1]))
+                    if (Convert.ToInt32(highscoreArray[i,1])>Convert.ToInt32(highscoreArray[i+1,1]) && highscoreArray[i,0] != null && highscoreArray[i+1,0] != null || Convert.ToInt32(highscoreArray[i, 2]) > Convert.ToInt32(highscoreArray[i + 1, 2]) && Convert.ToInt32(highscoreArray[i, 1]) == Convert.ToInt32(highscoreArray[i + 1, 1]))
                     {
                         for (int y = 0; y < 3; y++)
                         {
@@ -212,7 +202,7 @@ namespace Memory
                         }
                         
                         cardsturned = 1;
-                        trys++;
+                        Trys++;
                     }
                     card1.Image = img;
                     int id = game.Id(pos);
@@ -229,7 +219,7 @@ namespace Memory
                             TurnCard();
                         }
                         cardsturned = 1;
-                        trys++;
+                        Trys++;
                     }
                     card2.Image = img;
                     id = game.Id(pos);
@@ -246,7 +236,7 @@ namespace Memory
                             TurnCard();
                         }
                         cardsturned = 1;
-                        trys++;
+                        Trys++;
                     }
                     card3.Image = img;
                     id = game.Id(pos);
@@ -263,7 +253,7 @@ namespace Memory
                             TurnCard();
                         }
                         cardsturned = 1;
-                        trys++;
+                        Trys++;
                     }
                     card4.Image = img;
                     id = game.Id(pos);
@@ -280,7 +270,7 @@ namespace Memory
                             TurnCard();
                         }
                         cardsturned = 1;
-                        trys++;
+                        Trys++;
                     }
                     card5.Image = img;
                     id = game.Id(pos);
@@ -297,7 +287,7 @@ namespace Memory
                             TurnCard();
                         }
                         cardsturned = 1;
-                        trys++;
+                        Trys++;
                     }
                     card6.Image = img;
                     id = game.Id(pos);
@@ -314,7 +304,7 @@ namespace Memory
                             TurnCard();
                         }
                         cardsturned = 1;
-                        trys++;
+                        Trys++;
                     }
                     card7.Image = img;
                     id = game.Id(pos);
@@ -331,7 +321,7 @@ namespace Memory
                             TurnCard();
                         }
                         cardsturned = 1;
-                        trys++;
+                        Trys++;
                     }
                     card8.Image = img;
                     id = game.Id(pos);
@@ -348,7 +338,7 @@ namespace Memory
                             TurnCard();
                         }
                         cardsturned = 1;
-                        trys++;
+                        Trys++;
                     }
                     card9.Image = img;
                     id = game.Id(pos);
@@ -365,7 +355,7 @@ namespace Memory
                             TurnCard();
                         }
                         cardsturned = 1;
-                        trys++;
+                        Trys++;
                     }
                     card10.Image = img;
                     id = game.Id(pos);
@@ -373,7 +363,7 @@ namespace Memory
                     break;
             }
             
-            trycounter.Text = trys.ToString();
+            trycounter.Text = Trys.ToString();
             if (game.parsecount == 4 && cardsturned == 2)
             {
                 game.Parse();
@@ -446,12 +436,9 @@ namespace Memory
 
         }
 
-           public int Trys
-        {
-           get { return trys; }
-           set { trys = value; }
-        }
-        
+           public int Trys { get; set; }
+
+
         public void card1_Click(object sender, EventArgs e)
         {
             if (started)
@@ -574,7 +561,7 @@ namespace Memory
 
         private void trycounter_TextChanged(object sender, EventArgs e)
         {
-            trycounter.Text = trys.ToString();
+            trycounter.Text = Trys.ToString();
             trycounter.Update();
         }
 
