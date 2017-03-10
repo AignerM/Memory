@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 
 
@@ -124,12 +125,18 @@ namespace Memory
                     break;
                 }
             }
+
+            StringBuilder sb = new StringBuilder();
+
             HighscoreSortierung();
             for (int i = 0; i < 5; i++)
             {
                 if (highscoreArray[i, 0] != null)
                 {
-                    highscorelist.Text += (x + 1) + ". " + highscoreArray[i, 0] + " " + highscoreArray[i, 1] + " Sekunden " + highscoreArray[i, 2] + " Versuche\n";
+                    sb.Append((x + 1) + ". ");
+                    sb.Append(highscoreArray[i, 0] + " ");
+                    sb.Append(highscoreArray[i, 1] + " Sekunden ");
+                    sb.AppendLine(highscoreArray[i, 2] + " Versuche");
                     x++;
                 }
                 else
@@ -137,6 +144,9 @@ namespace Memory
                     break;
                 }
             }
+
+            highscorelist.Text = sb.ToString();
+
             if (shown == false)
             {
                 highscorelist.Show();
