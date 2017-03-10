@@ -23,10 +23,6 @@ namespace Memory
             t = new Timer();
             t.Tick += T_Tick;
         }
-        private Array HighscoreArray
-        {
-            get { return highscoreArray; }
-        }
         
         private void T_Tick(object sender, EventArgs e)
         {
@@ -188,181 +184,104 @@ namespace Memory
         private void Turn(int pos)
         {
             img = game.Path(pos);
+            cardsturned++;
             switch (pos)
             {
                 case 1:
-                    cardsturned++;
                     card1.Enabled = false;
-                    if (cardsturned == 3)
-                    {
-                        game.Parse();
-                        if (game.parse == false)
-                        {
-                            TurnCard();
-                        }
-                        
-                        cardsturned = 1;
-                        Trys++;
-                    }
-                    card1.Image = img;
-                    int id = game.Id(pos);
-                    game.IdArray(id);
                     break;
+
                 case 2:
-                    cardsturned++;
                     card2.Enabled = false;
-                    if (cardsturned == 3)
-                    {
-                        game.Parse();
-                        if (game.parse == false)
-                        {
-                            TurnCard();
-                        }
-                        cardsturned = 1;
-                        Trys++;
-                    }
-                    card2.Image = img;
-                    id = game.Id(pos);
-                    game.IdArray(id);
                     break;
+
                 case 3:
-                    cardsturned++;
                     card3.Enabled = false;
-                    if (cardsturned == 3)
-                    {
-                        game.Parse();
-                        if (game.parse == false)
-                        {
-                            TurnCard();
-                        }
-                        cardsturned = 1;
-                        Trys++;
-                    }
-                    card3.Image = img;
-                    id = game.Id(pos);
-                    game.IdArray(id);
                     break;
+
                 case 4:
-                    cardsturned++;
                     card4.Enabled = false;
-                    if (cardsturned == 3)
-                    {
-                        game.Parse();
-                        if (game.parse == false)
-                        {
-                            TurnCard();
-                        }
-                        cardsturned = 1;
-                        Trys++;
-                    }
-                    card4.Image = img;
-                    id = game.Id(pos);
-                    game.IdArray(id);
                     break;
+
                 case 5:
-                    cardsturned++;
                     card5.Enabled = false;
-                    if (cardsturned == 3)
-                    {
-                        game.Parse();
-                        if (game.parse == false)
-                        {
-                            TurnCard();
-                        }
-                        cardsturned = 1;
-                        Trys++;
-                    }
-                    card5.Image = img;
-                    id = game.Id(pos);
-                    game.IdArray(id);
                     break;
+
                 case 6:
-                    cardsturned++;
                     card6.Enabled = false;
-                    if (cardsturned == 3)
-                    {
-                        game.Parse();
-                        if (game.parse == false)
-                        {
-                            TurnCard();
-                        }
-                        cardsturned = 1;
-                        Trys++;
-                    }
-                    card6.Image = img;
-                    id = game.Id(pos);
-                    game.IdArray(id);
                     break;
+
                 case 7:
-                    cardsturned++;
                     card7.Enabled = false;
-                    if (cardsturned == 3)
-                    {
-                        game.Parse();
-                        if (game.parse == false)
-                        {
-                            TurnCard();
-                        }
-                        cardsturned = 1;
-                        Trys++;
-                    }
-                    card7.Image = img;
-                    id = game.Id(pos);
-                    game.IdArray(id);
                     break;
+
                 case 8:
-                    cardsturned++;
                     card8.Enabled = false;
-                    if (cardsturned == 3)
-                    {
-                        game.Parse();
-                        if (game.parse == false)
-                        {
-                            TurnCard();
-                        }
-                        cardsturned = 1;
-                        Trys++;
-                    }
-                    card8.Image = img;
-                    id = game.Id(pos);
-                    game.IdArray(id);
                     break;
+
                 case 9:
-                    cardsturned++;
                     card9.Enabled = false;
-                    if (cardsturned == 3)
-                    {
-                        game.Parse();
-                        if (game.parse == false)
-                        {
-                            TurnCard();
-                        }
-                        cardsturned = 1;
-                        Trys++;
-                    }
-                    card9.Image = img;
-                    id = game.Id(pos);
-                    game.IdArray(id);
                     break;
+
                 case 10:
-                    cardsturned++;
                     card10.Enabled = false;
-                    if (cardsturned == 3)
-                    {
-                        game.Parse();
-                        if (game.parse == false)
-                        {
-                            TurnCard();
-                        }
-                        cardsturned = 1;
-                        Trys++;
-                    }
-                    card10.Image = img;
-                    id = game.Id(pos);
-                    game.IdArray(id);
                     break;
             }
-            
+            if (cardsturned == 3)
+            {
+                game.Parse();
+                if (game.parse == false)
+                {
+                    TurnCard();
+                }
+
+                cardsturned = 1;
+                Trys++;
+            }
+            switch (pos)
+            {
+                case 1:
+                    card1.Image = img;
+                    break;
+
+                case 2:
+                    card2.Image = img;
+                    break;
+
+                case 3:
+                    card3.Image = img;
+                    break;
+
+                case 4:
+                    card4.Image = img;
+                    break;
+
+                case 5:
+                    card5.Image = img;
+                    break;
+
+                case 6:
+                    card6.Image = img;
+                    break;
+
+                case 7:
+                    card7.Image = img;
+                    break;
+
+                case 8:
+                    card8.Image = img;
+                    break;
+
+                case 9:
+                    card9.Image = img;
+                    break;
+
+                case 10:
+                    card10.Image = img;
+                    break;
+            }
+            int id = game.Id(pos);
+            game.IdArray(id);
             trycounter.Text = Trys.ToString();
             if (game.parsecount == 4 && cardsturned == 2)
             {
@@ -373,7 +292,7 @@ namespace Memory
                 GameComplete();
             }
         }
-        
+
         private void TurnCard()
         {
             int turncard;
